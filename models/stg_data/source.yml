@@ -8,5 +8,6 @@ sources:
           - name: RAW_CUSTOMERS
           - name: STG_PAYMENTS
           - name: RAW_ORDERS
+          - name: customers
           
 
