@@ -6,8 +6,21 @@ sources:
 
     tables:
           - name: RAW_CUSTOMERS
-          - name: STG_PAYMENTS
+          - name: RAW_PAYMENTS
+          - name: EMPLOYEE_TEMP1
           - name: RAW_ORDERS
+            columns:
+              - name: id
+                tests:
+                  - unique
+                  - not_null
+              - name: status
+                tests:
+                  - accepted_values:
+                     values: ['placed', 'shipped', 'completed','returned','return_pending','ordered']
+            
           - name: customers
+          
+
           
 
