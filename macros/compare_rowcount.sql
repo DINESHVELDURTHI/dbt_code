@@ -1,4 +1,4 @@
-{% macro default__compare_row_counts(a_relation, b_relation,c_relation) %}
+{% macro default__compare_row_counts(a_relation, b_relation,c_relation,d_relation) %}
 
         select
          '{{ a_relation }}' as relation_name,
@@ -19,5 +19,12 @@
          '{{ c_relation }}' as relation_name,
           count(*) as total_records
          from {{ c_relation }}
+
+            union all
+
+         select
+         '{{ c_relation }}' as relation_name,
+          count(*) as total_records
+         from {{ d_relation }}
 
 {% endmacro %}
