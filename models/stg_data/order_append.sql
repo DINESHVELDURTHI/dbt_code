@@ -3,4 +3,4 @@
     incremental_strategy="append",
 ) }}
 
-select * from {{source('datafeed_shared_schema','RAW_ORDERS')}} 
+select * from {{source('datafeed_shared_schema','RAW_ORDERS')}} limit 10

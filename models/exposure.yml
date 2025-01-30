@@ -1,0 +1,24 @@
+version: 2
+
+exposures:
+    - name: weekly_metrics
+      label: saisri by the Week
+      type: dashboard
+      maturity: high
+      description: 
+        For more exposure about project details
+      depends_on:
+         - ref('final_dataset')
+         - ref('compare_table_rowcount')
+         - ref('order_merge')
+         - ref('order_append') 
+         - ref('fact_orders')
+         - ref('order_delete_insert')
+         - ref('stg_customer')
+         - ref('reporting_data')
+         - source('datafeed_shared_schema','RAW_CUSTOMERS')
+         - source('datafeed_shared_schema','RAW_PAYMENTS')
+         - source('datafeed_shared_schema','RAW_ORDERS') 
+      owner:
+         name: saisri
+         email: snowflaketraining48@gmail.com
